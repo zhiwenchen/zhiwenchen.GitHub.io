@@ -58,6 +58,9 @@ main h2{
   .notice-title{
     width: 80px;
   }
+  .notice-slider123{
+    padding-left: 95px;
+  }
 }
 .notice{
   background-color: #6f42c1;
@@ -71,7 +74,6 @@ main h2{
   line-height: 70px;
   position: absolute;
   top: 0;
-  /* left: -20px; */
   text-align: center;
   z-index: 2;
   line-height: 60px;
@@ -79,13 +81,14 @@ main h2{
 .notice-slider123{
   padding-left: 165px;
   padding-right: 35px;
-  line-height: 1.5;
 }
-.notice:after
-,.notice .notice-title:before
-,.notice .notice-title:after {
+.notice .design
+,.notice .design {
   position: absolute;
   top: 0;
+  display: inline-block;
+  /* z-index: 2; */
+  /* left: 100%; */
   width: 20px;
   height: 100%;
   background: url(../images/notice-l.png) center center no-repeat;
@@ -98,23 +101,24 @@ main h2{
   position: relative;
   display: block;
   overflow: hidden;
+  white-space: nowrap;
   height: 60px;
 }
 .notice-list{
+  padding: 0;
+  margin: 0;
   height: 100%;
-  width: 500%;
   position: absolute;
-  top: 0;
+  /* 禁止换行（再将li设为display：inline-block */
+  white-space: nowrap;
 }
+
 .notice-list li{
-  list-style-type: none;
-  float: left;
-  text-align: left;
-  margin-right: 40px;
+  display: inline-block;
+  list-style-type: circle;
+  margin-right: 30px;
 }
 .notice-list li a{
-  float: left;
-  text-align: left;
   line-height: 60px;
   color: #fff;
 }
