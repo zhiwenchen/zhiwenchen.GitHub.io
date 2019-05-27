@@ -1,0 +1,120 @@
+body {
+    padding-bottom: 3rem;
+}
+.events b{
+  background-color:rgb(0, 0, 0);
+  display: inline-block;
+  height: 1px;
+  margin-left: 20px;
+  margin-right: 20px;
+  opacity: 0.5;
+  vertical-align: middle;
+  width: 60px;
+}
+main a{
+  color: inherit;
+}
+main a:hover{
+  text-decoration: none;
+}
+main h2{
+  font-family: "Microsoft JhengHei", 
+  "明黑", Arial, Helvetica;
+}
+.events .textwrapper p{
+  opacity: 0.7;
+}
+.events a.newsmore{
+  height: 48px;
+  font-size: 14px;
+  line-height: 48px;
+  border: 1px solid #000;
+  padding: 0 20px;
+  display: block;
+  opacity: 0.8;
+  margin: 60px auto;
+  width: 150px;
+  color: #000;
+  text-align: center;
+  opacity: 0.5;
+}
+.events a.newsmore:hover{
+  opacity: 0.9;
+}
+.events img.icon{
+  margin-right: 2px;
+  height: 12px;
+  width: 12px;
+  vertical-align: middle;
+  opacity: 0.6;
+}
+@media screen and (max-width: 1000px) {
+  .events  .newsmore {
+    margin-top: 25px; 
+  }
+  .events .col-md-4:not(:first-child){
+    margin-top: 15px;
+  }
+  .notice-title{
+    width: 80px;
+  }
+}
+.notice{
+  background-color: #6f42c1;
+  position: relative;
+  padding: 0;
+}
+.notice-title{
+  width: 150px;
+  display: block;
+  height: 100%;
+  line-height: 70px;
+  position: absolute;
+  top: 0;
+  /* left: -20px; */
+  text-align: center;
+  z-index: 2;
+  line-height: 60px;
+}
+.notice-slider123{
+  padding-left: 165px;
+  padding-right: 35px;
+  line-height: 1.5;
+}
+.notice:after
+,.notice .notice-title:before
+,.notice .notice-title:after {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background: url(../images/notice-l.png) center center no-repeat;
+  background-size: 50% auto;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  content: ' ';
+}
+.notice .slider-div{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 60px;
+}
+.notice-list{
+  height: 100%;
+  width: 500%;
+  position: absolute;
+  top: 0;
+}
+.notice-list li{
+  list-style-type: none;
+  float: left;
+  text-align: left;
+  margin-right: 40px;
+}
+.notice-list li a{
+  float: left;
+  text-align: left;
+  line-height: 60px;
+  color: #fff;
+}
