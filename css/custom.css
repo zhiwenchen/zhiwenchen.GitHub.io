@@ -48,18 +48,19 @@ main h2{
   vertical-align: middle;
   opacity: 0.6;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
   .events  .newsmore {
-    margin-top: 25px; 
+    margin-top: 20px!important; 
   }
   .events .col-md-4:not(:first-child){
     margin-top: 15px;
   }
   .notice-title{
-    width: 80px;
+    font-size: 1.3rem;
+    width: 100px!important;
   }
   .notice-slider123{
-    padding-left: 95px;
+    padding-left: 110px!important;
   }
 }
 .notice{
@@ -69,7 +70,7 @@ main h2{
 }
 .notice-title{
   width: 150px;
-  display: block;
+  display: inline-block;
   height: 100%;
   line-height: 70px;
   position: absolute;
@@ -77,18 +78,23 @@ main h2{
   text-align: center;
   z-index: 2;
   line-height: 60px;
+  /* opacity: 0.7; */
+  color: #fff;
+  font-family: 宋体;
+}
+.notice-title a:hover{
+  color: #FFCD00;
 }
 .notice-slider123{
   padding-left: 165px;
   padding-right: 35px;
+  white-space: nowrap;
 }
-.notice .design
-,.notice .design {
+.notice .notice-title::before
+,.notice .notice-title::after
+, .notice::after{
   position: absolute;
   top: 0;
-  display: inline-block;
-  /* z-index: 2; */
-  /* left: 100%; */
   width: 20px;
   height: 100%;
   background: url(../images/notice-l.png) center center no-repeat;
@@ -97,7 +103,19 @@ main h2{
   border-right: 1px solid #fff;
   content: ' ';
 }
+.notice .notice-title::before{
+  left: 0;
+}
+.notice .notice-title::after{
+  right: 0;
+}
+.notice::after{
+  right: 0;
+}
 .notice .slider-div{
+  width: 100%;
+  padding: 0;
+  margin: 0;
   position: relative;
   display: block;
   overflow: hidden;
@@ -111,14 +129,39 @@ main h2{
   position: absolute;
   /* 禁止换行（再将li设为display：inline-block */
   white-space: nowrap;
+  cursor: move;
 }
-
+.notice-list-clone{
+  display: inline-block;
+  vertical-align: top;
+}
 .notice-list li{
   display: inline-block;
-  list-style-type: circle;
-  margin-right: 30px;
+  margin-right: 20px;
+  opacity: 0.7;
 }
 .notice-list li a{
   line-height: 60px;
   color: #fff;
+  padding-left: 25px;
+}
+.notice-list li:hover{
+  opacity: 0.9;
+}
+.notice-list li:hover a{
+  color: #FFCD00;
+}
+.notice-list li:hover a:before{
+  background: #FFCD00;
+  border:1px solid #FFCD00;
+}
+.notice-list li a:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border:1px solid #fff;
+  /* background-color: #6f42c1; */
+  border-radius: 50%;
+  margin-right:5px;
 }

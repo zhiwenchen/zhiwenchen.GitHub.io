@@ -169,7 +169,7 @@
             <div class="container notice">
 							<span class="design"></span>
 										<h4 class="notice-title"><a href="http://www.csust.edu.cn/ty2j.jsp?urltype=tree.TreeTempUrl&wbtreeid=1005">通知</a></h4>
-							<span class="design"></span>
+							<!-- <span class="design" style="left: -100%"></span> -->
                 <div class="notice-slider123">
 									<!-- <div class="slider-div clearfix"> -->
 											<div class="slider-div">
@@ -180,7 +180,7 @@
 											<li><a href="http://www.csust.edu.cn/zcglc/info/1025/2045.htm"
 															target="_blank" title="关于电气与信息工程学院等学院电脑等设备采购项目招标的通知" 
 															class="notice-details">关于电气与信息工程学院等学院电脑等设备采购项目招标的通知</a></li>
-											<!-- <li><a href="http://www.csust.edu.cn/zcglc/info/1025/2044.htm" 
+											<li><a href="http://www.csust.edu.cn/zcglc/info/1025/2044.htm" 
 													target="_blank" title="关于化学与食品工程学院等学院空调采购项目招标的通知"
 															class="notice-details">关于化学与食品工程学院等学院空调采购项目招标的通知</a></li>
 											<li><a href="http://www.csust.edu.cn/zcglc/info/1025/2043.htm" 
@@ -188,7 +188,7 @@
 												class="notice-details">长沙理工大学关于2019-2022年教辅资料印刷及服务项目招标的通知</a></li>
 											<li><a href="http://www.csust.edu.cn/zcglc/info/1025/2042.htm" 
 												target="_blank" title="长沙理工大学关于招就联动智慧大数据整体解决方案建设项目招标的通知" 
-												class="notice-details">长沙理工大学关于招就联动智慧大数据整体解决方案建设项目招标的通知</a></li> -->
+												class="notice-details">长沙理工大学关于招就联动智慧大数据整体解决方案建设项目招标的通知</a></li>
 											</ul>
 										
 									</div>			
@@ -266,37 +266,29 @@
 						notice_list.append(notice_list_clone);
 						var clone = $('.notice-list-clone');
 						clone.html(html);
-						clone.css('display','inline-block');
+            // 'display':'inline-block'
+						clone.css({'width':notice_list.width()});
 						clone.eq(0).css({'left':'100%','right':'auto'});
 						clone.eq(1).css({'right':'100%','left':'auto'});
+            var fixWidth = notice_list.width();
 						var left;
-						console.log($('.slider-div').width() - clone.outerWidth() * 2);
-						setInterval(function() {
+            var scrollFunctio = function() {
 							left = parseFloat(notice_list.css('left'));
-							// console.log(left);
-							 if(left <= $('.slider-div').width() - clone.outerWidth() * 2){
-								 left = $('.slider-div').width();
+							 if(left <= fixWidth - clone.outerWidth(true) * 2){
+								 left = fixWidth
 							 } else {
 									left -= 1;
 							 }
-							 notice_list.css('left',parseFloat(left) + 'px');
-						},5);
-            // notice.scrollLeft(100);
-						// var width = notice_lsit.innerWidth();
-						// console.log(width);
-						// // notice_lsit.append(notice_lsit.html());
-						// notice_list_clone.html(notice_lsit.html());
-
-            // setInterval(function() {
-            //     var notice = $('.slider-div');
-            //     var sroLeft = notice.scrollLeft();
-            //     if(sroLeft >= width) {
-            //         notice.scrollLeft(0);
-            //     } else {
-            //         sroLeft ++;
-            //         notice.scrollLeft(sroLeft);
-            //     }
-            // },1);
+							 notice_list.css('left',left + 'px');
+						};
+						var scroll = setInterval(scrollFunctio, 15);
+            $('.notice-list').on({
+              mouseover:function() {
+              clearInterval(scroll);},
+              mouseout:function() {
+                scroll = setInterval(scrollFunctio, 15);
+              }
+            });
         })    
     </script>
     <script src="js/popper.min.js"></script>
