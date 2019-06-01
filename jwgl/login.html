@@ -13,18 +13,18 @@
 			<img class="img-fluid" src="../images/index_banner.gif" alt="教务管理系统首页图">
 		</div>
 	<div>
-			<!-- Nav tabs -->
-			<ul class="nav nav-pills" role="tablist">
-				<li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">用户登录</a></li>
-				<li role="presentation"><a href="#information" aria-controls="information" role="tab" data-toggle="tab">教务动态</a></li>
-				<li role="presentation"><a href="#administrative" aria-controls="administrative" role="tab" data-toggle="tab">管理规定</a></li>
-				<li role="presentation"><a href="#download" aria-controls="download" role="tab" data-toggle="tab">公共下载</a></li>
+		<nav>
+			<ul class="nav justify-content-center nav-pills flex-column flex-sm-row" role="tablist">
+				<li role="presentation" class="nav-item "><a class="nav-link active" href="#login" aria-controls="login" role="tab" data-toggle="tab">用户登录</a></li>
+				<li role="presentation" class="nav-item"><a class="nav-link" href="#information" aria-controls="information" role="tab" data-toggle="tab">教务动态</a></li>
+				<li role="presentation" class="nav-item"><a class="nav-link" href="#administrative" aria-controls="administrative" role="tab" data-toggle="tab">管理规定</a></li>
+				<li role="presentation" class="nav-item"><a class="nav-link" href="#download" aria-controls="download" role="tab" data-toggle="tab">公共下载</a></li>
 			</ul>
-			<!-- Tab panes -->
+		</nav>
 			<div class="tab-content container-fluid">
 				<div role="tabpanel" class="tab-pane active" id="login">
-						<div class="tabpaneldiv">
-								<form class="form-signin text-center">
+						<div class="tabpaneldiv tab-form">
+								<form class="form-signin text-center" action="jwgl.html">
 									<h1 class="h3 mb-3 font-weight-normal">用户登录</h1>
 									<select class="form-control" name="accountType" id="accountType">
 										<option value="">账号类型</option>
@@ -33,9 +33,9 @@
 										<option value="admin">管理人员</option>
 										<option value="maintainer">门户维护人员</option>
 									<label for="inputEmail" class="sr-only">学号</label>
-									<input type="account" id="inputAccount" class="form-control" placeholder="学号" required autofocus>
+									<input name="account" type="account" id="inputAccount" class="form-control" placeholder="学号" required autofocus>
 									<label for="inputPassword" class="sr-only">密码</label>
-									<input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+									<input name="password" type="password" id="inputPassword" class="form-control" placeholder="密码" required>
 									<div class="checkbox mb-3">
 										<label>
 											<input type="checkbox" value="remember-me"> 记住我
@@ -46,47 +46,45 @@
 							</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="information">
-					<div class="tabpaneldiv">
-					<ul>
-						<li><a href="">	2018—2019学年第二学期课程考试安排表 [2019-05-17 10:03:32]</a></li>
-						<li><a href="">	关于2019年上半年全国大学英语四、六级口语考试报名的通知 [2019-04-19 14:12:45]</a></li>
-						<li><a href="">长沙理工大学关于同意彭豪等同学转专业的决议 [2019-04-12 10:45:36]</a></li>
-						<li><a href="">	关于做好2020届毕业生电子图像采集工作的通知 [2019-03-22 15:21:49]</a></li>
-						<li><a href="">	关于做好2018-2019学年第二学期学生特殊情况选课的通知 [2019-01-11 11:11:26]</a></li>
-						<li><a href="">	2018-2019学年第二学期第二次取消的选修课程 [2018-12-19 18:42:59]</a></li>
-						<li><a href="">	2018-2019学年第二学期第一次取消的选修课 [2018-12-17 12:25:42]</a></li>
-						<li><a href="">关于修改弱密码的通知 [2018-12-03 17:02:50]</a></li>
-						<li><a href="">	2018-2019一学期课程考试安排表 [2018-11-17 09:14:39]</a></li>
-					</ul>
-				</div>
+					<ul class="list-group">
+						<li class="list-group-item"><a href="">2018—2019学年第二学期课程考试安排表</a><span>[2019-05-17 10:03:32]</span></li>
+						<li class="list-group-item"><a href="">关于2019年上半年全国大学英语四、六级口语考试报名的通知</a><span>[2019-04-19 14:12:45]</span></li>
+						<li class="list-group-item"><a href="">关于做好2020届毕业生电子图像采集工作的通知</a><span>[2019-03-22 15:21:49]</span></li>
+						<li class="list-group-item"><a href="">关于做好2018-2019学年第二学期学生特殊情况选课的通知</a><span>[2019-01-11 11:11:26]</span></li>
+						<li class="list-group-item"><a href="">2018-2019学年第二学期第二次取消的选修课程</a><span>[2018-12-19 18:42:59]</span></li>
+						<li class="list-group-item"><a href="">2018-2019学年第二学期第一次取消的选修课</a><span>[2018-12-17 12:25:42]</span></li>
+						<li class="list-group-item"><a href="">关于修改弱密码的通知</a><span>[2018-12-03 17:02:50]</span></li>
+						<li class="list-group-item"><a href="">2018-2019一学期课程考试安排表</a><span>[2018-11-17 09:14:39]</span></li>
+						</ul>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="administrative">
-					<div class="tabpaneldiv">
-					<li><a href="">成绩管理规定</a></li>
-					<li><a href="">质量评价管理规定</a></li>
-					<li><a href="">考试管理规定</a></li>
-					<li><a href="">学籍管理规定</a></li>
-					<li><a href="">选课管理规定</a></li>
-					<li><a href="">考评管理规定</a></li>
-				</div>
+						<ul class="list-group">
+							<li class="list-group-item"><a href="">成绩管理规定</a></li>
+							<li class="list-group-item"><a href="">质量评价管理规定</a></li>
+							<li class="list-group-item"><a href="">考试管理规定</a></li>
+							<li class="list-group-item"><a href="">学籍管理规定</a></li>
+							<li class="list-group-item"><a href="">选课管理规定</a></li>
+							<li class="list-group-item"><a href="">考评管理规定</a></li>
+						</ul>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="download">
-						教室信息 2016-07-15 14:33:05上传
-						课程插班考试申请表 2015-03-05 14:43:29上传
-						长沙理工大学教室借用申请及审批表 2014-10-16 16:45:13上传
-						课程缓考申请表 2013-11-18 10:42:53上传
-						关于全校性选修课程修读有关说明 2010-07-07 14:41:58上传
-						长沙理工大学学生选课规程 2009-12-22 09:14:45上传</div>
+							<ul class="list-group">
+								<li class="list-group-item"><a href="">教室信息</a><span>[2016-07-15 14:33:05]</span></li>
+								<li class="list-group-item"><a href="">课程插班考试申请表 </a><span>[2015-03-05 14:43:29]</span></li>
+								<li class="list-group-item"><a href="">长沙理工大学教室借用申请及审批表</a><span>[2014-10-16 16:45:13]</span></li>
+								<li class="list-group-item"><a href="">课程缓考申请表 </a><span>[2013-11-18 10:42:53]</span></li>
+								<li class="list-group-item"><a href="">关于全校性选修课程修读有关说明</a><span>[2010-07-07 14:41:58]</span></li>
+								<li class="list-group-item"><a href="">长沙理工大学学生选课规程</a><span>[2009-12-22 09:14:45]</span></li>
+							</ul>
 			</div>
-		
 		</div>
 		<!-- 底部-开始 -->
 		<footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; 长沙理工大学教务管理系统</p>
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
+          <li class="list-inline-item"><a href="#">帮助</a></li>
+          <li class="list-inline-item"><a href="#">教务处</a></li>
+          <li class="list-inline-item"><a href="#">陈志文</a></li>
         </ul>
       </footer>
 		<!-- 底部-结束 -->
@@ -106,5 +104,6 @@
           }
         })
       })
+
     </script>
   </body>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>长沙理工大学教务管理系统</title>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/jwgl.css">
+</head>
+
+<body>
+	<div class="container-fluid text-center banner">
+		<img class="img-fluid" src="../images/jwgl_banner.gif" alt="教务管理系统首页图">
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="list-group accordion" id="accordion">
+				<li class="list-group-item">
+					<div class="card-header" id="heading1">
+						<a role="button" href="#collapse1" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
+							aria-controls="collapse1">学生学籍</a>
+						<div class="collapse" id="collapse1" aria-labelledby="heading1" data-parent="#accordion">
+							<ul class="list-group card-body">
+								<li class="list-group-item"><a href="">学籍档案</a></li>
+								<li class="list-group-item"><a href="">注册信息</a></li>
+								<li class="list-group-item"><a href="">毕业事宜</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item card">
+					<div class="card-header" id="heading2">
+						<a role="button" href="#collapse2" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+							aria-controls="collapse2">培养方案</a>
+						<div class="collapse" id="collapse2" aria-labelledby="heading2" data-parent="#accordion">
+							<ul class="list-group card-body">
+								<li class="list-group-item"><a href="">理论课程</a></li>
+								<li class="list-group-item"><a href="">实践环节</a></li>
+								<li class="list-group-item"><a href="">毕业学分要求</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item card">
+					<div class="card-header" id="heading2">
+						<a role="button" href="#collapse2" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+							aria-controls="collapse2">网上选课</a>
+						<div class="collapse" id="collapse2" aria-labelledby="heading2" data-parent="#accordion">
+							<ul class="list-group card-body">
+								<li class="list-group-item"><a href="">学籍档案</a></li>
+								<li class="list-group-item"><a href="">注册信息</a></li>
+								<li class="list-group-item"><a href="">毕业事宜</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item card">
+					<div class="card-header" id="heading3">
+						<a role="button" href="#collapse3" data-toggle="collapse" data-target="#collapse3" aria-expanded="true"
+							aria-controls="collapse3">教学安排</a>
+						<div class="collapse" id="collapse3" aria-labelledby="heading3" data-parent="#accordion">
+							<ul class="list-group card-body">
+								<li class="list-group-item"><a href="">学籍档案</a></li>
+								<li class="list-group-item"><a href="">注册信息</a></li>
+								<li class="list-group-item"><a href="">毕业事宜</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item card">
+					<div class="card-header" id="heading4">
+						<a role="button" href="#collapse4" data-toggle="collapse" data-target="#collapse4" aria-expanded="true"
+							aria-controls="collapse4">考试安排</a>
+						<div class="collapse" id="collapse4" aria-labelledby="heading4" data-parent="#accordion">
+							<ul class="list-group card-body">
+								<li class="list-group-item"><a href="">学籍档案</a></li>
+								<li class="list-group-item"><a href="">注册信息</a></li>
+								<li class="list-group-item"><a href="">毕业事宜</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item card">
+					<div class="card-header" id="heading5">
+						<a role="button" href="#collapse5" data-toggle="collapse" data-target="#collapse5" aria-expanded="true"
+							aria-controls="collapse5">学生成绩</a>
+						<div class="collapse" id="collapse5" aria-labelledby="heading5" data-parent="#accordion">
+							<ul class="list-group card-body">
+								<li class="list-group-item"><a href="">学籍档案</a></li>
+								<li class="list-group-item"><a href="">注册信息</a></li>
+								<li class="list-group-item"><a href="">毕业事宜</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item card">
+					<div class="card-header" id="heading6">
+						<a role="button" href="#collapse6" data-toggle="collapse" data-target="#collapse6" aria-expanded="true"
+							aria-controls="collapse6">学生学籍</a>
+						<div class="collapse" id="collapse6" aria-labelledby="heading6" data-parent="#accordion">
+							<ul class="list-group card-body">
+								<li class="list-group-item"><a href="">学籍档案</a></li>
+								<li class="list-group-item"><a href="">注册信息</a></li>
+								<li class="list-group-item"><a href="">毕业事宜</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+		</div>
+		<div class="col-md-9">内容</div>
+	</div>
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script>
+		function getQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) return unescape(r[2]);
+			return null;
+		};
+		$(function () {
+			var accountType = getQueryString('accountType');
+			var account = getQueryString('account');
+			// alert('欢迎' + accountType + account);
+		});
+	</script>
+	<script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>

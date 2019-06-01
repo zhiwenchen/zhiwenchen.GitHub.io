@@ -9,6 +9,15 @@ body {
 .banner img{
   /* margin-top: 200px; */
 }
+nav{
+  padding: 1.5rem;
+}
+nav .nav-link{
+  color:rgb(108, 117, 125);
+}
+nav .nav-link:hover{
+  color: #007bff;
+}
 .tabpaneldiv {
   display: -ms-flexbox;
   display: -webkit-box;
@@ -19,10 +28,9 @@ body {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  /* padding-top: 40px; */
-  /* padding-bottom: 40px; */
+  /* padding-top: 40px;
+  padding-bottom: 40px; */
 }
-
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -48,9 +56,6 @@ body {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-/* .form-signin select option{
-  padding-left: 0!important;
-} */
 .form-signin input[type="account"] {
   margin-bottom: -1px;
   border-radius: 0;
@@ -59,4 +64,21 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.list-group{
+  width: 636px;
+  list-style: circle;
+  margin: 0 auto;
+}
+.list-group a::before{
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border:1px solid #000;
+  border-radius: 50%;
+  margin-right:5px;
+}
+.tabpaneldiv ul span{
+  padding-left: 5px;
 }
