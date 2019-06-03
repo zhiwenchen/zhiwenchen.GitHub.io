@@ -38,12 +38,13 @@
 									<input name="password" type="password" id="inputPassword" class="form-control" placeholder="密码" required>
 									<div class="checkbox mb-3">
 										<label>
-											<input type="checkbox" value="remember-me"> 记住我
+											<input type="checkbox" id="rememberMe"> 记住我
 										</label>
 									</div>
 									<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
 								</form>
 							</div>
+									<button class="btn btn-lg btn-primary btn-block" id="btnSubmit">登录测试</button>	
 				</div>
 				<div role="tabpanel" class="tab-pane" id="information">
 					<ul class="list-group">
@@ -91,10 +92,42 @@
 		<script src="../js/jquery-3.4.1.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
     <script>
+			//设置cookie
+			function setCookie(c_name, value, expiredays) {
+					var exdate = new Date();
+					exdate.setTime(exdate.getTime() + expiredays*24*60*60*1000);
+					document.cookie = c_name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
+				}
+			//得到cookie的内容
+			function getCookie(c_name) {
+				if(document.cookie.length > 0) {
+					c_start = document.cookie.indexOf(c_name + "=");//获取字符串的起点
+					if(c_start != -1) {
+						c_start = c_start + c_name.length + 1;//获取值的起点
+						c_end = document.cookie.indexOf(";", c_start);//获取结尾处
+						if(c_end == -1) c_end = document.cookie.length;//如果是最后一个，结尾就是cookie字符串的结尾
+						return decodeURI(document.cookie.substring(c_start, c_end));//截取字符串返回
+					}
+				}
+				return "";
+			}
+			//清除cookie  
+			function clearCookie(cname) {  
+				setCookie(cname, "", -1);  
+			}
       $(function(){
-        $('#accountType>option').eq(1).prop('selected','selected');//默认选中第二个（学生）
+				var account = getCookie(account);
+				var accountType = getCookie(accountType);
+				
+				//如果有cookie数据则自动填入
+				if(account !== '' && accountType !== '') {
+					$('#inputAccount').val(account);
+					$('#accountType').val(accountType);
+				} else {//否则设置页面默认选中第二个（学生）
+				$('#accountType').val('student');
+				}
+				//根据不同的账号类型显示不同的placeholder
         $('#accountType').change(function() {
-					// console.log($(this).find('option:selected').val());
           if($(this).find('option:selected').val() === 'student') {
 						$('#inputAccount').attr('placeholder','学号');
           } else if($(this).find('option:selected').val() === 'teacher') {
@@ -102,8 +135,20 @@
           } else {
 						$('#inputAccount').attr('placeholder','账号');
           }
-        })
+				});
       })
-
+			$('#btnSubmit').click(function() {
+				//如果勾选‘记住我选项’则将账户类型和账号存入cookie
+				if($('#rememberMe').is(':checked')) {
+					console.log('account:' + $('#accountType').val() + $('#inputAccount').val());
+					setCookie('account',$('#inputAccount').val().trim(),7);
+					setCookie('accountType',$('#accountType').val().trim(),7);
+					console.log(document.cookie);
+					console.log(getCookie('account'));
+				} else {
+					clearCookie('account');
+					clearCookie('accountType');
+				}
+			});
     </script>
   </body>

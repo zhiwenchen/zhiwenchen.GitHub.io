@@ -1,3 +1,20 @@
+@media screen and (max-width: 768px){
+
+}
+.banner{
+   background-color: #F8FFFE;
+}
+.fa-bars{
+color: rgb(202, 202, 202);
+direction: ltr;
+font-family: FontAwesome;
+font-size: 18px;
+font-weight: 400;
+line-height: 18px;
+text-rendering: auto;
+text-size-adjust: 100%;
+}
 .list-group-item{
     padding: 0;
+    border: none;
 }
