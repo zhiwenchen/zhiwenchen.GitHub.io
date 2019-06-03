@@ -41,10 +41,9 @@
 											<input type="checkbox" id="rememberMe"> 记住我
 										</label>
 									</div>
-									<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+									<button class="btn btn-lg btn-primary btn-block" type="submit" id="btnSubmit">登录</button>
 								</form>
 							</div>
-									<button class="btn btn-lg btn-primary btn-block" id="btnSubmit">登录测试</button>	
 				</div>
 				<div role="tabpanel" class="tab-pane" id="information">
 					<ul class="list-group">
@@ -116,15 +115,16 @@
 				setCookie(cname, "", -1);  
 			}
       $(function(){
-				var account = getCookie(account);
-				var accountType = getCookie(accountType);
+				var account = getCookie('account');
+				var accountType = getCookie('accountType');
 				
 				//如果有cookie数据则自动填入
 				if(account !== '' && accountType !== '') {
 					$('#inputAccount').val(account);
 					$('#accountType').val(accountType);
 				} else {//否则设置页面默认选中第二个（学生）
-				$('#accountType').val('student');
+					$('#accountType').val('student');
+					console.log(document.cookie);
 				}
 				//根据不同的账号类型显示不同的placeholder
         $('#accountType').change(function() {
@@ -136,15 +136,14 @@
 						$('#inputAccount').attr('placeholder','账号');
           }
 				});
-      })
+      });
 			$('#btnSubmit').click(function() {
 				//如果勾选‘记住我选项’则将账户类型和账号存入cookie
 				if($('#rememberMe').is(':checked')) {
-					console.log('account:' + $('#accountType').val() + $('#inputAccount').val());
+					// console.log('account:' + $('#accountType').val() + $('#inputAccount').val());
 					setCookie('account',$('#inputAccount').val().trim(),7);
 					setCookie('accountType',$('#accountType').val().trim(),7);
-					console.log(document.cookie);
-					console.log(getCookie('account'));
+					// console.log(getCookie('account'));
 				} else {
 					clearCookie('account');
 					clearCookie('accountType');

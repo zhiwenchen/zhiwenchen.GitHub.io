@@ -1,3 +1,8 @@
+@media screen and (max-width: 768px){
+  .list-group{
+    width: 100%!important;
+  }
+}
 html,
 body {
   height: 100%;
@@ -5,9 +10,6 @@ body {
 }
 .banner{
   background-color: #F8FFFE;
-}
-.banner img{
-  /* margin-top: 200px; */
 }
 nav{
   padding: 1.5rem;
