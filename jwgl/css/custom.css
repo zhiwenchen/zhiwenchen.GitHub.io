@@ -1,3 +1,10 @@
+
+body{
+	background: white;
+	font-weight: 500;
+	font-size: 1.05em;
+	font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif;
+}
 .sidebar-wrapper,
 .sidebar-wrapper .sidebar-dropdown > a:after,
 .sidebar-wrapper ul li a i,
@@ -8,14 +15,10 @@
     -ms-transition: all 0.3s;
     transition: all 0.3s;
 }
-
 /*----------------page-wrapper----------------*/
 .page-wrapper{
     height: 100vh;
-    /* background-color: #fff; */
-    /* color: white; */
 }
-
 /*----------------toggeled sidebar----------------*/
 .page-wrapper.toggled .sidebar-wrapper{
     left:0px;
@@ -25,7 +28,19 @@
         padding-left: 300px;
     }
 }
-
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+	border-radius: .25em;
+	background-color: #5cb85c;
+}
 .page-wrapper.toggled #toggle-sidebar{
     position: absolute;
     /* color: #cacaca; */
@@ -137,6 +152,9 @@
     position: relative;
     padding: 5px 30px 5px 20px;
 }
+.sidebar-wrapper .sidebar-menu ul li a span{
+    vertical-align: middle;
+}
 
 .sidebar-wrapper .sidebar-menu a:hover{
     color: #222;
@@ -150,13 +168,7 @@
     text-align: center;
     border-radius: 4px;
 }
-li.selectedli{
-    background-color: #0086fd;
-    border-left: 4px solid #3b98c8;
-}
-li.selectedli{
-    
-}
+
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
         content: "\f105";
         font-family: FontAwesome;
@@ -170,7 +182,7 @@ li.selectedli{
         -moz-osx-font-smoothing: grayscale;
         position: absolute;
         right: 15px;
-        top: 10px;
+        top: 5px;
 }
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
         padding: 5px 0;
@@ -201,14 +213,22 @@ li.selectedli{
     transform:rotate(90deg);
     right: 17px;
 }
+li.selectedli{
+    /* opacity: 0.7; */
+    background-color: #5bc0de;
+    border-left: 4px solid #f0ad4e;
+}
+li.selectedli a:before{
+    color: #222!important;
+}
 /*--------------------------side-footer------------------------------*/
 
 .sidebar-footer{
     position: absolute;
     width: 100%;
     bottom: 0;
+    height: 40px;
     display: flex;
-    /* background: #1c232f;   */
 }
 .sidebar-footer > a {
     flex-grow: 1;
@@ -227,7 +247,7 @@ li.selectedli{
     width: 100%;
     padding-left: 0px;
 }
-.page-wrapper .page-content > div {
+.page-wrapper .page-content .header{
     padding: 20px 40px;
 }
 .page-wrapper .page-content {
