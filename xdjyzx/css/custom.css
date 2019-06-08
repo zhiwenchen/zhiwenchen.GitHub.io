@@ -1,0 +1,24 @@
+body{
+    background: url(../images/bg.jpg) center;
+    background-position: center 0;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.banner{
+    padding: 20px 20px;
+}
+.navbar-dark{
+    background-color:#3E83CE!important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.8);
+}
+.title{
+    margin: 15px 0;
+}
+.list-group-item p{
+    margin-bottom: 0;
+}
+.col-md-6{
+    margin-bottom: 15px;
+}
