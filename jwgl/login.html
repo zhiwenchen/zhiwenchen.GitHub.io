@@ -79,12 +79,36 @@
 			</div>
 		</div>
 		<!-- 底部-开始 -->
-		<footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 长沙理工大学教务管理系统</p>
+		<footer class="my-5 pt-5 text-center text-small">
+        <p class="mb-1 text-muted ">&copy; 长沙理工大学教务管理系统</p>
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">帮助</a></li>
+          <li class="list-inline-item">
+						<!-- 模态框触发按钮 -->
+						<a href="#" data-toggle="modal" data-target="#exampleModal">
+							帮助
+						</a>
+						<!-- 模态弹出框 -->
+						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog modal-lg" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">关于本页面</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body text-left">
+										<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;账号类型默认选择学生，如果登录前<b>勾选了“记住我”</b>，则会将账号类型和账户名保存至本地<b>cookie</b>中(仅在服务器端运行时有效),下次进入时自动填写。账号类型和用户名会通过url传递并在下一页面获取并显示。</p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
           <li class="list-inline-item"><a href="#">教务处</a></li>
-          <li class="list-inline-item"><a href="#">陈志文</a></li>
         </ul>
       </footer>
 		<!-- 底部-结束 -->
